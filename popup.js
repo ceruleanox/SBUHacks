@@ -70,7 +70,20 @@ changeImageW.addEventListener("click", async () => {
     target: { tabId: tab.id },
     function: changeBackgroundImagesW
   });
+
+  var seconds = prompt("How many seconds of procrastination?", "0");
+  if(parseFloat(seconds) != 0){
+      setTimeout( function ( ) { alert( "Is it time?" ); }, seconds * 1000 );
+  }
+
 });
+
+/*document.addEventListener('keydown', (event) => {
+  if (event) {
+    console.log("Enter pressed");
+  }
+});
+*/
 
 function changeBackgroundImagesW() {
     src = "";
@@ -91,6 +104,7 @@ function changeBackgroundImagesW() {
           determineSrcW(div[i]);
           //console.log( div[i].style.backgroundImage);
         div[i].style.backgroundImage = "url(\"" + chrome.runtime.getURL(src) + "\")" ;
+          
       }
   }
   
@@ -110,6 +124,7 @@ function changeBackgroundImagesW() {
   // adding on - also have function apply CSS styling//
   /////////////////////////////////////////////////////
   
+
   const body = document.body;
   body.style.fontFamily = "Garamond, serif";  
   
@@ -158,6 +173,11 @@ changeImageM.addEventListener("click", async () => {
     target: { tabId: tab.id },
     function: changeBackgroundImagesM
   });
+
+  var seconds = prompt("How many seconds of procrastination?", "0");
+  if(parseFloat(seconds) != 0){
+      setTimeout( function ( ) { alert( "Is it time?" ); }, seconds * 1000 );
+  }
 });
 
 
@@ -201,6 +221,8 @@ for(i = 0; i < imgs.length; i++){
 /////////////////////////////////////////////////////
 // adding on - also have function apply CSS styling//
 /////////////////////////////////////////////////////
+
+setTimeout( function ( ) { alert( "Is it time?" ); }, 10000 );
 
 const body = document.body;
 body.style.fontFamily = "Garamond, serif";  
