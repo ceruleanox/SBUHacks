@@ -1,34 +1,38 @@
 {
-  "name": "Getting Started Example",
-  "description": "Build an Extension!",
-  "version": "1.0",
-  "manifest_version": 3,
-  "content_scripts": [
-    {
-      "matches": [
-        "https://*.facebook.com/*"
-      ],
-      "js": ["content.js"]
-    }
-  ],
-  "background": {
-    "service_worker": "background.js"
-  },
-  "permissions": ["storage", "activeTab", "scripting"],
-  "action": {
-    "default_popup": "popup.html",
-    "default_icon": {
-      "16": "/images/get_started16.png",
-      "32": "/images/get_started32.png",
-      "48": "/images/get_started48.png",
-      "128": "/images/get_started128.png"
-    }
-  },
-  "icons": {
-    "16": "/images/get_started16.png",
-    "32": "/images/get_started32.png",
-    "48": "/images/get_started48.png",
-    "128": "/images/get_started128.png"
-  },
-  "options_page": "options.html"
+    "manifest_version": 3,
+    "name": "(HIPS) Hiding In Plain Sight",
+    "description": "What do you mean I'm not working?",
+    "version": "1.0",  
+    "permissions": ["storage", "activeTab", "scripting"],
+    "web_accessible_resources": [{
+        "resources": ["lMaskImages/*.png", "lMaskImages/*.jpg", "mMaskImages/*.jpg", "mMaskImages/*.png", "MemeImages/*.png", "MemeImages/*.jpg"],
+        "matches":["<all_urls>"]
+    }],
+    
+    "content_scripts":[
+        {
+            "matches":[
+               "<all_urls>"
+            ],
+            "js":["popup.js"]
+        }
+    ],
+
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+          "16": "icon.png",
+          "32": "icon.png",
+          "48": "icon.png",
+          "128": "icon.png"
+        }
+      },
+      "icons": {
+        "16": "icon.png",
+        "32": "icon.png",
+        "48": "icon.png",
+        "128": "icon.png"
+      }
+
+
 }
